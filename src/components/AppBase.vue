@@ -71,7 +71,7 @@ export default Vue.extend({
   },
   mounted() {
     const ref = this;
-
+/*
     ref.bans = {
       teamA: [],
       teamB: [],
@@ -84,7 +84,7 @@ export default Vue.extend({
       teamA: [],
       teamB: []
     };
-
+*/
     const ws = new WebSocket("ws://localhost:2998");
     ws.onmessage = function(message: any) {
       const data = JSON.parse(message.data);
