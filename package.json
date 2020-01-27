@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.4.4",
+    "css-reset-and-normalize": "^2.1.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -27,6 +28,9 @@
     "typescript": "~3.5.3",
     "vue-template-compiler": "^2.6.10"
   },
+  "prettier": {
+    "printWidth": 240
+  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -37,7 +41,9 @@
       "@vue/prettier",
       "@vue/typescript"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
     }
