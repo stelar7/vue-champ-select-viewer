@@ -35,11 +35,11 @@ export default Vue.extend({
         center: {
           teamA: {
             score: 1,
-            phaseTimer: 0
+            phaseTimer: -1
           },
           teamB: {
             score: 1,
-            phaseTimer: 0
+            phaseTimer: -1
           },
           logo: "https://upload.wikimedia.org/wikipedia/en/d/df/Riot_Games_%282019%29.svg"
         }
@@ -71,7 +71,7 @@ export default Vue.extend({
   },
   mounted() {
     const ref = this;
-/*
+    /*
     ref.bans = {
       teamA: [],
       teamB: [],
@@ -137,6 +137,20 @@ export default Vue.extend({
             ref.picks.teamA = ref.picks.teamA.map(p => (p.uuid == obj.uuid ? obj : p));
           } else {
             ref.picks.teamB = ref.picks.teamB.map(p => (p.uuid == obj.uuid ? obj : p));
+          }
+
+          break;
+        }
+        case "TIMER": {
+          const obj = data["TIMER"];
+          if (obj.hasOwnProperty("PHASE_BAN_PICK")) {
+            if (ref.header.center.teamB.phaseTimer != -1) {
+              ref.header.center.teamA.phaseTimer = (obj["PHASE_BAN_PICK"]["duration"] / 1000) | 0;
+              ref.header.center.teamB.phaseTimer = -1;
+            } else {
+              ref.header.center.teamB.phaseTimer = (obj["PHASE_BAN_PICK"]["duration"] / 1000) | 0;
+              ref.header.center.teamA.phaseTimer = -1;
+            }
           }
 
           break;
