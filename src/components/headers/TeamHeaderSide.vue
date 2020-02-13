@@ -34,10 +34,6 @@ export default Vue.extend({
   #coach {
     left: 1%;
   }
-
-  #team {
-    // padding-left: 20%;
-  }
 }
 
 #rightori {
@@ -49,10 +45,6 @@ export default Vue.extend({
 
   #coach {
     right: 1%;
-  }
-
-  #team {
-    // padding-right: 20%;
   }
 }
 
