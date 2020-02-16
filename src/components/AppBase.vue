@@ -142,6 +142,7 @@ export default Vue.extend({
           break;
         }
         case "TIMER": {
+          /*
           const obj = data["TIMER"];
           if (obj.hasOwnProperty("PHASE_BAN_PICK")) {
             if (ref.header.center.teamB.phaseTimer != -1) {
@@ -152,6 +153,7 @@ export default Vue.extend({
               ref.header.center.teamA.phaseTimer = -1;
             }
           }
+          */
 
           break;
         }

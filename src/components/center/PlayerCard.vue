@@ -87,7 +87,11 @@ export default Vue.extend({
 #right {
   flex-direction: row-reverse;
 
+  transform: scaleX(-1);
+
   #spells {
+    z-index: 2;
+    transform: scaleX(-1);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -99,6 +103,7 @@ export default Vue.extend({
     padding: 0 3% 0 0;
   }
   .spell {
+    transform: scaleX(-1);
     border: 2px solid #333;
     width: 40px;
     height: 40px;
@@ -110,6 +115,8 @@ export default Vue.extend({
     background-size: cover;
   }
   #name {
+    z-index: 1;
+    transform: scaleX(-1);
     height: 100%;
     width: 100%;
     font-size: 1.4em;
